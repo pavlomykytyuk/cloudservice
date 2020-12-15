@@ -24,7 +24,7 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/t:Publish /p:DeployOnBuild=True /p:AutomatedBuid=True /p:configuration=release /p:TargetProfile=Cloud /p:PublsidhDir="$(build.artifactStagingDirectory)"'
+    msbuildArgs: '/t:Publish /p:DeployOnBuild=True /p:AutomatedBuid=True /p:configuration=release /p:TargetProfile=Cloud /p:PublsidhDir="$(build.artifactStagingDirectory)\\"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
@@ -36,4 +36,3 @@ steps:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
-    publishLocation: 'Container'
