@@ -41,7 +41,7 @@ steps:
     azureClassicSubscription: 'CloudServiceClassic'
     EnableAdvancedStorageOptions: false
     StorageAccount: 'pavlomclassicstoragename'
-    ServiceName: 'wwwwwq'
+    ServiceName: 'StudentRG'
     ServiceLocation: 'West Europe'
     CsPkg: '$(build.artifactStagingDirectory)/**/*.cspkg'
     CsCfg: '$(build.artifactStagingDirectory)/**/*.cscfg'
