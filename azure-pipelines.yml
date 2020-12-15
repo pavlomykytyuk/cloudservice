@@ -36,3 +36,15 @@ steps:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
+- task: AzureCloudPowerShellDeployment@1
+  inputs:
+    azureClassicSubscription: 'CloudServiceClassic'
+    EnableAdvancedStorageOptions: true
+    ARMConnectedServiceName: 'Visual Studio Professional(5916753c-42a6-4095-bfcc-e7bae958dd59)'
+    ARMStorageAccount: 'pavlom'
+    ServiceName: 'wwwwwq'
+    ServiceLocation: 'West Europe'
+    CsPkg: '$(Build.ArtifactStagingDirectory)/**/*.cspkg'
+    CsCfg: '$(Build.ArtifactStagingDirectory)/**/*.cscfg'
+    slotName: 'Production'
+    AllowUpgrade: true
