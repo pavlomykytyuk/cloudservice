@@ -32,7 +32,7 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-- task: AzureFileCopy@4
+- task: AzureFileCopy@3
   inputs:
     SourcePath: '$(build.artifactstagingdirectory)'
     azureSubscription: 'Visual Studio Professional(5916753c-42a6-4095-bfcc-e7bae958dd59)'
