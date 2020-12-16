@@ -39,7 +39,7 @@ steps:
     Destination: 'AzureBlob'
     storage: 'pavlom'
     ContainerName: 'azureportaldeploy'
-    AdditionalArgumentsForBlobCopy: '?sv=2019-12-12&ss=b&srt=sco&sp=rwdlacx&se=2021-01-28T20:46:37Z&st=2020-12-16T12:46:37Z&spr=https&sig=RI5T%2FTYLfpwuBO%2FqEK7l9A4rNY1DIHSD68p%2B4FC5kHI%3D'
+    BlobPrefix: 'myvd1'
 - task: AzureCloudPowerShellDeployment@1
   inputs:
     azureClassicSubscription: 'CloudServiceClassic'
