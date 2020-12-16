@@ -32,10 +32,14 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-- task: PublishBuildArtifacts@1
+- task: AzureFileCopy@4
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
+    SourcePath: '$(build.artifactstagingdirectory)'
+    azureSubscription: 'Visual Studio Professional(5916753c-42a6-4095-bfcc-e7bae958dd59)'
+    Destination: 'AzureBlob'
+    storage: 'pavlom'
+    ContainerName: 'azureportaldeploy'
+    AdditionalArgumentsForBlobCopy: '?sv=2019-12-12&ss=b&srt=sco&sp=rwdlacx&se=2021-01-28T20:46:37Z&st=2020-12-16T12:46:37Z&spr=https&sig=RI5T%2FTYLfpwuBO%2FqEK7l9A4rNY1DIHSD68p%2B4FC5kHI%3D'
 - task: AzureCloudPowerShellDeployment@1
   inputs:
     azureClassicSubscription: 'CloudServiceClassic'
